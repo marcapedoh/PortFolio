@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="A propos | Marc APEDOH" description="A propos de Marc APEDOH ">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="A propos"
+				tagline="Decouvrez mon parcurs et mes compétences"
+			>
+				<img
+					width="550"
+					height="873"
+					src="/assets/MaPhoto.jpeg"
+					alt="Marc Apedoh à l'école en exposé"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						Je suis étudiant en deuxième année d'informatique avec une expérience pratique dans plusieurs domaines de développement. J'ai travaillé sur des projets en Java Swing, où j'ai développé des interfaces graphiques interactives. J'ai également utilisé Spring Boot pour créer des API Web robustes et efficaces.
+					</p>
+					<p>
+						Ensuite, j'ai exploré le développement d'applications multiplateformes en utilisant .NET Maui, ce qui m'a permis de créer des applications attrayantes pour différents systèmes d'exploitation.
+J'ai également acquis une expérience en développement mobile en utilisant Flutter, où j'ai créé deux projets d'applications mobiles à la fois pour Android .
+					</p>
+					<p>
+						De plus, j'ai travaillé avec Django, un framework Python, pour développer des applications web dynamiques et évolutives.
+
+Mon parcours m'a permis d'acquérir des compétences variées dans le développement logiciel, notamment dans les langages Java, C#, Python et Dart, ainsi que dans les frameworks Spring Boot, .NET Maui, Flutter et Django.
+
+J'ai hâte de continuer à explorer de nouvelles technologies et à développer mes compétences en informatique.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>J'ai obtenu mon probatoire série D avec une moyenne de 13 et mon baccalauréat série D avec une moyenne de 13 également, ce qui témoigne de ma détermination à réussir académiquement. En plus de mes réussites scolaires, j'ai obtenu des certifications en CCNA1 et en Linux, ce qui démontre mon intérêt pour l'apprentissage continu et ma volonté de me tenir au courant des dernières avancées technologiques.
+
+						Je suis constamment à la recherche de nouvelles opportunités pour développer mes compétences et relever des défis passionnants dans le domaine de l'informatique. J'ai hâte de mettre en pratique mes connaissances et mon expérience pour contribuer à des projets innovants et collaboratifs.</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>officia unde omnis</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
